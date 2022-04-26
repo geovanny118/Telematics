@@ -1,0 +1,80 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;    
+    /* background-color: blue; */
+}
+
+#title-section {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+#description-section {
+    padding-top: 50px;
+}
+
+#list-section{
+    padding-top: 40px;
+    margin: 0 auto;
+}
+#title {
+    font-family: arial;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#description {
+    font-family: arial;
+    font-size: 18px;
+}
+
+#login-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+}
+
+#login-section {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+/* table style */
+.user-table {
+   border-collapse: collapser;
+   border: 1px solid #000000;
+   width: 100%;
+}
+
+.user-table-header {
+    text-align: center;
+    background: none repeat scroll 0 0 #B5B5B5;
+    border-bottom: 1px solid #000000;
+    padding: 2px;
+}
+
+.user-table-odd-row {
+    text-align: center;
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.user-table-even-row {
+    text-align: center;
+    background: none repeat scroll 0 0 #D3D3D3; 
+}

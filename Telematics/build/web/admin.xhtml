@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Admin</title>
+        <h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <h:outputLabel rendered="#{authentication.login()}">
+                <div>
+                    <div>Bienvenido administrador</div>
+                    <!--form section -->
+                    <!--list section -->
+                    <div id="list-section">
+                        <div>
+                            <h:form>
+                                <h:dataTable value="#{userData.userList}" var="user" styleClass="user-table" headerClass="user-table-header" rowClasses="user-table-odd-row, user-table-even-row">
+                                    <h:column>
+                                        <f:facet name="header">Nombre</f:facet>
+                                        <h:inputText value="#{user.name}" rendered="#{user.edit}"/>
+                                        <h:outputText value="#{user.name}" rendered="#{not user.edit}"/>   
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Apellido</f:facet>
+                                        <h:inputText value="#{user.lastname}" rendered="#{user.edit}"/>
+                                        <h:outputText value="#{user.lastname}" rendered="#{not user.edit}"/>                      
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">C.C.</f:facet>
+                                        <h:inputText value="#{user.id}" rendered="#{user.edit}"/>
+                                        <h:outputText value="#{user.id}" rendered="#{not user.edit}"/>                           
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Usuario</f:facet>
+                                        <h:inputText value="#{user.username}" rendered="#{user.edit}"/>
+                                        <h:outputText value="#{user.username}" rendered="#{not user.edit}"/>                          
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Contraseña</f:facet>
+                                        <h:inputText value="#{user.password}" rendered="#{user.edit}"/>
+                                        <h:outputText value="#{user.password}" rendered="#{not user.edit}"/>                          
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Correo</f:facet>
+                                        <h:inputText value="#{user.email}" rendered="#{user.edit}"/>
+                                        <h:outputText value="#{user.email}" rendered="#{not user.edit}"/>                          
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Edit</f:facet>
+                                        <h:commandButton value="Edit" action="#{userData.editUser(user)}" rendered="#{not user.edit}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Delete</f:facet>
+                                        <h:commandButton value="Delete" action="#{userData.deleteUser(user)}"/>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>  
+            </h:outputLabel>
+            <h:outputLabel rendered="#{not authentication.login()}">
+                <div>usuario no registrado, acceso denegado</div>
+            </h:outputLabel>
+        </div>  
+    </h:body>
+</html>
+
