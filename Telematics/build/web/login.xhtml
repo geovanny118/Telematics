@@ -22,12 +22,15 @@
                     </div>
                     <br/>
                     <br/>
-                    <div class="input-section"> 
+                    <div class="input-section">
                         <div>
-                            <h:commandButton action="admin" value="Ingresar" class="submit"/>                    
-                        </div>  
+                            <h:commandButton action="index?faces-redirect=true" value="Regresar" class="button"/>
+                        </div>
+                        <div>
+                            <h:commandButton action="#{authentication.login()}" value="Ingresar" class="submit"/>                    
+                        </div>
                     </div>   
-                    </h:form>
+                </h:form>
             </div>
         </div> 
     </h:body>

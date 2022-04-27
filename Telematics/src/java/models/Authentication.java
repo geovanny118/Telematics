@@ -31,7 +31,12 @@ public class Authentication {
         this.pass = pass;
     }
     
-    public boolean login(){
-        return this.user.equals("admin") && this.pass.equals("admin");
+    public String login(){
+        if(this.user.equals("admin") && this.pass.equals("admin")){
+            return "admin.xhtml";
+        }
+        else {
+            return "access-denied.xhtml";
+        }
     }
 }

@@ -9,9 +9,10 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class UserData {
 
-    private String name, lastname, id, username, password, email;
+    private String name="", lastname="", id="", username="", password="", email="";
 
-    private static final ArrayList<User> userList = new ArrayList<User>(Arrays.asList(new User("Steven", "Bedoya", "13456", "stbedoya", "qwerty", "stbedoya@email.com"),
+    private static final ArrayList<User> userList = new ArrayList<User>(Arrays.asList(
+            new User("Steven", "Bedoya", "13456", "stbedoya", "qwerty", "stbedoya@email.com"),
             new User("Johana", "Moreno", "6547891", "joamoreno", "uniajc", "joamoreno@email.com"),
             new User("Alejandra", "Bedoya", "123456789", "alebedoya", "bennett", "alebedoya@email.com")
     ));
